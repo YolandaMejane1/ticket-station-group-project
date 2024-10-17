@@ -1,5 +1,5 @@
 ## Project Overview
-TicketStation is designed to make event ticketing easy for the business and startup community. 
+EasyTicket is designed to make event ticketing easy for the business and startup community. 
 With an intuitive interface, users can view upcoming and past events, search and filter events by category or date, and purchase tickets seamlessly. 
 Event organizers can easily create events, set ticket prices (free or paid), and track sales.
 
