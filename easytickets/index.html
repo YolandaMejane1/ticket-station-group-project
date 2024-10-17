@@ -31,10 +31,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link" href="#">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Plan</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
@@ -42,13 +45,39 @@
         </ul>
       </div>
     </div>
+
+          <!-- Search bar for desktop -->
+          <form class="d-none d-lg-block">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search events..." aria-label="Search">
+              <button class="btn btn-outline-secondary" type="button">Search</button>
+            </div>
+          </form>
+    
+          <!-- Search icon for mobile -->
+          <div class="d-lg-none">
+            <button id="searchIcon" class="btn btn-outline-secondary" type="button">
+              <i class="fas fa-search"></i>
+            </button>
+            <form id="mobileSearchForm" class="d-none mt-2">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search events..." aria-label="Search">
+                <button class="btn btn-outline-secondary" type="button">Search</button>
+              </div>
+            </form>
+          </div>
+    
+        </div>
+      </div>
+    </nav>
+    
   </nav>
 
   <!-- Hero Section -->
   <header class="bg-primary text-white text-center py-5">
     <h1>Welcome to EasyTickets</h1>
     <p>Book your favorite events easily and securely</p>
-    <a href="#" class="btn btn-light">Get Started</a>
+    <a href="#" class="btn btn-light">Upcoming Events</a>
   </header>
 
 <!-- Features Section -->
@@ -90,6 +119,58 @@
         <h2>Upcoming Events</h2>
         <p>Browse through our latest events and book your tickets now!</p>
       </div>
+      <div id="upcomingEventsCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicators/Dots -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#upcomingEventsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Event 1"></button>
+          <button type="button" data-bs-target="#upcomingEventsCarousel" data-bs-slide-to="1" aria-label="Event 2"></button>
+          <button type="button" data-bs-target="#upcomingEventsCarousel" data-bs-slide-to="2" aria-label="Event 3"></button>
+        </div>
+      
+        <!-- Carousel Items -->
+        <div class="carousel-inner">
+          <!-- Event 1 -->
+          <div class="carousel-item active">
+            <img src="event1.jpg" class="d-block w-100" alt="Event 1">
+            <div class="carousel-caption d-md-block">
+              <h5>Event 1 Title</h5>
+              <p>Event 1 Description goes here. Keep it concise and engaging.</p>
+              <a href="buy-tickets.html" class="btn btn-primary">Buy Tickets</a>
+            </div>
+          </div>
+          
+          <!-- Event 2 -->
+          <div class="carousel-item">
+            <img src="event2.jpg" class="d-block w-100" alt="Event 2">
+            <div class="carousel-caption d-md-block">
+              <h5>Event 2 Title</h5>
+              <p>Event 2 Description goes here. Mention the date and venue if needed.</p>
+              <a href="buy-tickets.html" class="btn btn-primary">Buy Tickets</a>
+            </div>
+          </div>
+          
+          <!-- Event 3 -->
+          <div class="carousel-item">
+            <img src="event3.jpg" class="d-block w-100" alt="Event 3">
+            <div class="carousel-caption d-md-block">
+              <h5>Event 3 Title</h5>
+              <p>Event 3 Description goes here. Include key information about the event.</p>
+              <a href="buy-tickets.html" class="btn btn-primary">Buy Tickets</a>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#upcomingEventsCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#upcomingEventsCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>      
+
       <div class="col-md-6">
         <!--<img src="assets/images/event.jpg" alt="Event Image" class="img-fluid">-->
       </div>
