@@ -1,0 +1,38 @@
+/* Custom Styles for EasyTickets */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.londrina-sketch-regular {
+  font-family: "Londrina Sketch", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+header {
+  background: url('../assets/images/hero-bg.jpg') no-repeat center center/cover;
+  height: 80vh;
+}
+
+.navbar-brand {
+  font-family: "Londrina Sketch";
+  font-size: 2.5em;
+}
+
+header>h1 {
+  margin-top: 100px;
+}
+
+h1, h2 {
+  font-weight: bold;
+
+}
+
+.navbar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+}
