@@ -1,0 +1,69 @@
+/* Reset some default browser styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+.site-header {
+    background-color: rgba(50, 80, 191, 0.993); /* Green background */
+    color: black; /* White text color */
+    padding: 5px 10px; /* Reduced padding for a smaller header */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between columns */
+    align-items: center; /* Center items vertically */
+    height: 50px; /* Set a fixed height for the header */
+    background-image: none;
+}
+
+/* Column Container */
+#column-container {
+    display: flex; /* Flexbox for columns */
+    width: 100%; /* Full width */
+}
+
+/* Column Styles */
+.column-1 {
+    flex: 1; /* Take up available space */
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-start; /* Align items to the start */
+}
+
+.column-2 {
+    flex: 1; /* Take up available space */
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-end; /* Align items to the end */
+}
+
+/* Banner Text */
+#banner-text-1 {
+    font-size: 1.2em; /* Slightly smaller font size for banner text */
+    font-weight: bold; /* Bold text */
+}
+
+/* Link Styles */
+a {
+    color: white; /* White link color */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 5px; /* Reduced margin between links */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .site-header {
+        flex-direction: column; /* Stack columns on small screens */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    #column-container {
+        flex-direction: column; /* Stack columns vertically */
+    }
+
+    .column-1, .column-2 {
+        width: 100%; /* Full width on small screens */
+    }
+}

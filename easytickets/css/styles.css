@@ -9,6 +9,33 @@ body {
   font-style: normal;
 }
 
+
+/* header login sign up 
+  background-color: #32CD32;
+  padding-top: 12px;
+  color: white;
+  padding-bottom: 18px;
+
+}buttons */
+/* .site-header {
+
+.home-content {
+  position: relative;
+  padding-top: 150px;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  padding-bottom: 125px;
+}
+
+#banner-text{
+    text-align: center;
+} */
+
+/* header login sign up buttons end */
+
+
 header {
   background: url('../assets/images/hero-bg.jpg') no-repeat center center/cover;
   height: 80vh;
