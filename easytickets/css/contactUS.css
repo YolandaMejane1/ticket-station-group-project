@@ -1,0 +1,87 @@
+.contactform-section {
+    border-top: rgb(190, 185, 185) solid 3px;
+    padding-left: 270px;
+    padding-right: 270px;
+    padding-top: 140px;
+    padding-bottom: 200px;
+    background-image: url('');
+    background-color: #F1F1F1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    animation: animateBg 7s linear infinite;
+    background-image:none;
+    background-size: 600% 100%;
+}
+
+@keyframes animateBg {
+    0% {
+        background-position: 100% 0%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+#form-div {
+    padding: 70px 60px;
+    background-color: rgb(255, 255, 255);
+    border: 4px #c4c4c4 solid;
+    border-radius: 20px;
+}
+
+#heading-contact{
+    padding-left: 30px;
+    padding-bottom: 30px;
+    border-bottom: #c4c4c4 3px solid;
+    margin-bottom: 60px;
+}
+
+.form-label{
+    font-family: "Bai Jamjuree", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.form-check-label{
+    font-family: "Bai Jamjuree", sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.form-control{
+    background-color: #f1f1f1;
+    border: #c4c4c4;
+}
+
+
+
+.button-submit {
+    margin-top: 20px;
+    background: blue;
+    font-family: inherit;
+    padding: 0.3em 2em;
+    font-weight: bolder;
+    font-size: 24px;
+    border-radius: 0.9em;
+    box-shadow: 0.2em 0.3em;
+    border: #000000;
+    cursor: pointer;
+  }
+  
+  .button-submit:hover {
+    color: blue;
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+    background: whitesmoke;
+    border-radius: 0.9em;
+  }
+  
+  .button-submit:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+  }
+  

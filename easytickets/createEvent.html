@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyTickets-Create event</title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/contactUS.css">
+  <link rel="stylesheet" href="css/create event.css">
+</head>
+<body>
+  
+<!-- header login sign up buttons -->
+<header class="site-header">
+    <div id="column-container">
+        <div class="column-1">
+            <p class="me-4 mb-0">
+                <strong id="banner-text-1"></strong>
+            </p>
+        </div>
+        <div class="column-2">
+            <p class="me-4 mb-0">
+                <strong>
+                    <a href="signup.html" id="login-link">Login</a> | 
+                    <a href="signup.html" id="register-link">Register</a>
+                </strong>
+            </p>
+        </div>
+    </div>
+  </header>
+  <!-- header login sign up buttons end  -->
+
+
+    <div class="box">
+        <div class="header">
+            <h1>Create Event</h1>
+        </div>
+    
+        <form>
+            <div class="row">
+                <div class="col-2">
+                    <label for="firstName">First Name</label>
+                </div>
+                <div class="col-4">
+                    <input type="text" id="firstName" required>
+                    <small>First name</small>
+                </div>
+                <div class="col-4">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" required>
+                    <small>Last name</small>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-2">
+                    <label for="company">Company</label>
+                </div>
+                <div class="col-8">
+                    <input type="text" id="company">
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-2">
+                    <label for="email">Email</label>
+                </div>
+                <div class="col-8">
+                    <input type="email" id="email" required>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-2">
+                    <label for="areaCode">Phone</label>
+                </div>
+                <div class="col-3">
+                    <input type="tel" id="areaCode" placeholder="Area Code" required>
+                    <small>Area Code</small>
+                </div>
+                <div class="col-5">
+                    <input type="tel" id="phoneNumber" placeholder="Phone Number" required>
+                    <small>Phone Number</small>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-2">
+                    <label for="subject">Subject</label>
+                </div>
+                <div class="col-8">
+                    <input type="text" id="subject" required>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-6">
+                    <p>Are You an Existing Customer</p>
+                    <input type="radio" name="customerStatus" value="yes">Yes
+                    <input type="radio" name="customerStatus" value="no">No
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-6">
+                    <button type="submit" class="btn btn-danger">Register</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+</body>
+</html>
