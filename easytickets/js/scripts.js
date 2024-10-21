@@ -1,38 +1,70 @@
-//naviigate to booking page from buttons
+// Step 1: Navigate to booking page with event details
 function goToBookingPage(eventName, price) {
-
     window.location.href = `bookingpage.html?event=${encodeURIComponent(eventName)}&price=${price}`;
-};
+}
 
-// Get event details 
+// Step 2: Fetch event details on the booking page
 const urlParams = new URLSearchParams(window.location.search);
 const eventName = urlParams.get('event');
 const ticketPrice = parseInt(urlParams.get('price'));
 
-// Update booking page 
-document.getElementById('eventTitle').textContent = eventName;
-document.getElementById('ticketPrice').textContent = ticketPrice;
+// Check if event details exist and display them
+if (eventName && ticketPrice) {
+    document.getElementById('eventTitle').textContent = eventName;
+    document.getElementById('ticketPrice').textContent = ticketPrice;
 
-const ticketQuantityInput = document.getElementById('ticketQuantity');
-const totalPriceDisplay = document.getElementById('totalPrice');
+    const ticketQuantityInput = document.getElementById('ticketQuantity');
+    const totalPriceDisplay = document.getElementById('totalPrice');
 
-// Update total price
-function updateTotalPrice() {
-  const quantity = parseInt(ticketQuantityInput.value);
-  const totalPrice = quantity * ticketPrice;
-  totalPriceDisplay.textContent = totalPrice;
+    // Step 3: Update total price when ticket quantity changes
+    function updateTotalPrice() {
+        const quantity = parseInt(ticketQuantityInput.value);
+        const totalPrice = quantity * ticketPrice;
+        totalPriceDisplay.textContent = totalPrice;
+    }
+
+    ticketQuantityInput.addEventListener('input', updateTotalPrice);
+    updateTotalPrice(); // Initialize total price on page load
 }
 
-ticketQuantityInput.addEventListener('input', updateTotalPrice);
-updateTotalPrice(); // Initialize total price 
-
-// Proceed to payment
+// Step 4: Proceed to payment page with total details
 document.getElementById('proceedToPayment').addEventListener('click', function() {
-  const quantity = ticketQuantityInput.value;
-  const totalPrice = ticketQuantityInput.value * ticketPrice;
-  window.location.href = `confirmation.html?event=${encodeURIComponent(eventName)}&quantity=${quantity}&totalPrice=${totalPrice}`;
+    const quantity = document.getElementById('ticketQuantity').value;
+    const totalPrice = quantity * ticketPrice;
+    window.location.href = `payment.html?event=${encodeURIComponent(eventName)}&quantity=${quantity}&totalPrice=${totalPrice}`;
 });
 
+// Step 5: Fetch and display event info on the payment page
+const paymentUrlParams = new URLSearchParams(window.location.search);
+const paymentEventName = paymentUrlParams.get('event');
+const ticketQuantity = paymentUrlParams.get('quantity');
+const paymentTotalPrice = paymentUrlParams.get('totalPrice');
+
+// Check if payment details exist and display them
+if (paymentEventName && ticketQuantity && paymentTotalPrice) {
+    document.getElementById('eventTitle').textContent = paymentEventName;
+    document.getElementById('ticketQuantity').textContent = ticketQuantity;
+    document.getElementById('totalPrice').textContent = paymentTotalPrice;
+}
+
+// Step 6: Display booking confirmation on confirmation page
+const confirmationUrlParams = new URLSearchParams(window.location.search);
+const confirmedEventName = confirmationUrlParams.get('event');
+const confirmedQuantity = confirmationUrlParams.get('quantity');
+const confirmedTotalPrice = confirmationUrlParams.get('totalPrice');
+
+// Check if confirmation details exist and display them
+if (confirmedEventName && confirmedQuantity && confirmedTotalPrice) {
+    document.getElementById('confirmationDetails').innerHTML = `
+        <h1>Booking Confirmation</h1>
+        <p>Thank you for your booking!</p>
+        <p>Event: ${confirmedEventName}</p>
+        <p>Quantity: ${confirmedQuantity}</p>
+        <p>Total Price: R${confirmedTotalPrice}.00</p>
+    `;
+}
+
+// Example events array for selection (replace with dynamic event data)
 const events = [
     { name: "Startup Founder", location: "Rosebank, The Link", price: 0 },
     { name: "Founders Dinner", location: "Sandton, Convention Centre", price: 550 },
@@ -42,33 +74,20 @@ const events = [
     { name: "Event 6", location: "Location 6", price: 450 },
 ];
 
-document.getElementById('proceedToPayment').onclick = function() {
-    const selectedEventIndex = document.getElementById('eventSelect').value;
-    const selectedEvent = events[selectedEventIndex];
-  
-    // event details in storage to access on the payment page
-    localStorage.setItem('selectedEvent', JSON.stringify(selectedEvent));
-  
-    // Redirect to payment page
-    window.location.href = 'payment.html';
-  };
-  
-const selectedEvent = JSON.parse(localStorage.getItem('selectedEvent'));
+// Attach event listeners to buttons on the index page
+function attachEventListeners() {
+    const eventButtons = document.querySelectorAll('.event-button');
+    eventButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            const selectedEvent = events[index];
+            goToBookingPage(selectedEvent.name, selectedEvent.price);
+        });
+    });
+}
 
-if (selectedEvent) {
-  // Display event details 
-  document.getElementById('eventDetails').innerHTML = `
-    <h2>${selectedEvent.name}</h2>
-    <p>Location: ${selectedEvent.location}</p>
-    <p>Price: R${selectedEvent.price}.00</p>
-  `;
-  
-  // Display booking confirmation 
-  document.getElementById('confirmationDetails').innerHTML = `
-    <h1>Booking Confirmation</h1>
-    <p>Thank you for your booking!</p>
-    <p>Event: ${selectedEvent.name}</p>
-    <p>Location: ${selectedEvent.location}</p>
-    <p>Price: R${selectedEvent.price}.00</p>
-  `;
+// Initialize event listeners if on index.html
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', attachEventListeners);
+} else {
+    attachEventListeners();
 }
