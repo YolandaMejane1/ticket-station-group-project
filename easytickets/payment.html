@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment - EasyTickets</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Londrina+Sketch&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">EasyTickets</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="About.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="events.html">Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="createEvent.html">Create Event</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="help.html">Help</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contactUs.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Payment Form -->
+<div class="container my-5">
+  <h1 class="text-center">Payment Information</h1>
+
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+      <form action="confirmation.html" method="POST">
+        <!-- Cardholder Name -->
+        <div class="mb-3">
+          <label for="cardName" class="form-label">Cardholder Name</label>
+          <input type="text" class="form-control" id="cardName" placeholder="Enter cardholder name" required>
+        </div>
+
+        <!-- Card Number -->
+        <div class="mb-3">
+          <label for="cardNumber" class="form-label">Card Number</label>
+          <input type="text" class="form-control" id="cardNumber" placeholder="XXXX XXXX XXXX XXXX" maxlength="16" required>
+        </div>
+
+        <!-- Expiration Date -->
+        <div class="mb-3">
+          <label for="expDate" class="form-label">Expiration Date</label>
+          <input type="month" class="form-control" id="expDate" required>
+        </div>
+
+        <!-- CVV -->
+        <div class="mb-3">
+          <label for="cvv" class="form-label">CVV</label>
+          <input type="text" class="form-control" id="cvv" placeholder="3-digit CVV" maxlength="3" required>
+        </div>
+
+        <!-- Payment Button -->
+        <div class="text-center mt-4">
+            <button class="btn btn-primary w-100" id="completePayment" onclick="window.location.href='confirmation.html'">Complete Payment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+  <p>&copy; 2024 EasyTickets. All Rights Reserved.</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
