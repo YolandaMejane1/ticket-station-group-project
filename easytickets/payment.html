@@ -11,6 +11,19 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+        background: linear-gradient(360deg, rgb(245, 225,245)  0%, rgb(173, 252,163) 100%);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 110vh;
+    }
+
+    #completePayment {
+        background-color: #40b736 ;
+        border: 1px solid #40b736 ;
+    }
+  </style>
 </head>
 <body>
 
@@ -51,7 +64,6 @@
 <div class="container my-5">
   <h1 class="text-center">Payment Information</h1>
 
-  <!-- Event and Payment Summary -->
   <div id="eventDetails" class="text-center mb-4">
     <h2>Event: <span id="eventName"></span></h2>
     <p>Quantity: <span id="ticketQuantity"></span></p>
@@ -61,6 +73,7 @@
   <div class="row justify-content-center mt-4">
     <div class="col-md-6">
       <form id="paymentForm">
+
         <!-- Cardholder Name -->
         <div class="mb-3">
           <label for="cardName" class="form-label">Cardholder Name</label>
@@ -87,7 +100,7 @@
 
         <!-- Autofill Button -->
         <div class="text-center mt-2">
-            <button type="button" class="btn btn-secondary w-100 mb-3" id="fillDummyData">Autofill Payment Details</button>
+            <button type="button" class="btn btn-primary w-80 mb-3" id="fillDummyData">Autofill Payment Details</button>
         </div>
 
         <!-- Payment Button -->
@@ -109,7 +122,7 @@
 
 
 <script>
-  // Retrieve event details
+  // Retrieving event details
   const urlParams = new URLSearchParams(window.location.search);
   const eventName = urlParams.get('event');
   const ticketQuantity = urlParams.get('quantity');
@@ -123,14 +136,14 @@
   // autofilling the payment details
   document.getElementById('fillDummyData').addEventListener('click', function() {
     document.getElementById('cardName').value = 'John Doe';
-    document.getElementById('cardNumber').value = '4111111111111111'; // Example test card number
+    document.getElementById('cardNumber').value = '4111111111111111'; 
     document.getElementById('expDate').value = '2024-12';
     document.getElementById('cvv').value = '123';
   });
 
   // form submission
   document.getElementById('paymentForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form from submitting normally
+    event.preventDefault(); 
 
     // Validating inputs 
     const cardName = document.getElementById('cardName').value;
@@ -138,7 +151,7 @@
     const expDate = document.getElementById('expDate').value;
     const cvv = document.getElementById('cvv').value;
 
-    // If all fields are valid, redirect to confirmation page
+    // If all fields are valid, go to confirmation page
     if (cardName && cardNumber && expDate && cvv) {
       window.location.href = `confirmation.html?event=${encodeURIComponent(eventName)}&quantity=${ticketQuantity}&totalPrice=${totalPrice}`;
     } else {
