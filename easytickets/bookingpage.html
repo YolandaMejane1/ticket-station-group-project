@@ -52,13 +52,12 @@
 </nav>
 
 <!-- Booking Section -->
-<div class="container my-5">
+<div class="container my-5" >
   <h1 class="text-center">Book Your Tickets</h1>
 
-  <div class="row justify-content-center mt-4">
+  <div class="row justify-content-center mt-4" >
     <div class="col-md-6">
       <div class="card p-4">
-        <!-- Event details will be dynamically injected here by JavaScript -->
         <h4 id="eventTitle"></h4>
         <p>Price per ticket: R<span id="ticketPrice"></span></p>
 
@@ -87,7 +86,7 @@ function loadEventDetails() {
     const eventName = urlParams.get('event');
     const eventPrice = parseInt(urlParams.get('price'));
 
-    // display event details
+    // displaying event details
     if (eventName && eventPrice) {
         document.getElementById('eventTitle').textContent = eventName;
         document.getElementById('ticketPrice').textContent = eventPrice;

@@ -64,20 +64,43 @@
   </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 <script>
-  // get parameters
+  // event details 
   const urlParams = new URLSearchParams(window.location.search);
   const eventName = urlParams.get('event');
   const ticketQuantity = urlParams.get('quantity');
   const totalPrice = urlParams.get('totalPrice');
 
-  // Display confirmation 
+  // Generate a unique ticket ID using a combination of date and random number
+  const ticketID = 'TICKET-' + new Date().getTime() + '-' + Math.floor(Math.random() * 10000);
+
+  // Displaying confirmation details in HTML
   document.getElementById('confirmationDetails').innerHTML = `
     <h2>Booking Confirmation</h2>
     <p><strong>Event:</strong> ${eventName}</p>
     <p><strong>Quantity:</strong> ${ticketQuantity} ticket(s)</p>
     <p><strong>Total Price:</strong> R${totalPrice}</p>
+    <p><strong>Ticket ID:</strong> ${ticketID}</p>
+    <button class="btn btn-primary mt-3" id="downloadTicket">Download Ticket</button>
   `;
+
+  // Function to download the ticket as a PDF
+  document.getElementById('downloadTicket').addEventListener('click', function () {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Adding content to the PDF
+    doc.text("Booking Confirmation", 10, 10);
+    doc.text(`Event: ${eventName}`, 10, 20);
+    doc.text(`Quantity: ${ticketQuantity} ticket(s)`, 10, 30);
+    doc.text(`Total Price: R${totalPrice}`, 10, 40);
+    doc.text(`Ticket ID: ${ticketID}`, 10, 50);
+
+    // option to save the PDF
+    doc.save(`Ticket_${ticketID}.pdf`);
+  });
 </script>
 
 <!-- Bootstrap JS -->
