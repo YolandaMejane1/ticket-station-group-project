@@ -104,30 +104,28 @@
 
 
 <script>
-  // Retrieve event details from URL
+  // Retrieve event details
   const urlParams = new URLSearchParams(window.location.search);
   const eventName = urlParams.get('event');
   const ticketQuantity = urlParams.get('quantity');
   const totalPrice = urlParams.get('totalPrice');
 
-  // Populate event details on the payment page
+  // event details on the payment page
   document.getElementById('eventName').innerText = eventName;
   document.getElementById('ticketQuantity').innerText = ticketQuantity;
   document.getElementById('totalPrice').innerText = totalPrice;
 
-  // Handle form submission
+  // form submission
   document.getElementById('paymentForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent form from submitting normally
 
-    // Validate inputs (example only)
+    // Validating inputs 
     const cardName = document.getElementById('cardName').value;
     const cardNumber = document.getElementById('cardNumber').value;
     const expDate = document.getElementById('expDate').value;
     const cvv = document.getElementById('cvv').value;
 
-    // You can add additional validation here
-
-    // If all fields are valid, redirect to confirmation page with parameters
+    // If all fields are valid, redirect to confirmation page
     if (cardName && cardNumber && expDate && cvv) {
       window.location.href = `confirmation.html?event=${encodeURIComponent(eventName)}&quantity=${ticketQuantity}&totalPrice=${totalPrice}`;
     } else {

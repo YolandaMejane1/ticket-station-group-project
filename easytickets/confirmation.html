@@ -64,15 +64,14 @@
   </div>
 </div>
 
-<!-- JavaScript to display confirmation details -->
 <script>
-  // Get URL parameters
+  // get parameters
   const urlParams = new URLSearchParams(window.location.search);
   const eventName = urlParams.get('event');
   const ticketQuantity = urlParams.get('quantity');
   const totalPrice = urlParams.get('totalPrice');
 
-  // Display confirmation details
+  // Display confirmation 
   document.getElementById('confirmationDetails').innerHTML = `
     <h2>Booking Confirmation</h2>
     <p><strong>Event:</strong> ${eventName}</p>

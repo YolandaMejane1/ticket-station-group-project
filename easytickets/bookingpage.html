@@ -80,20 +80,19 @@
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Custom JavaScript to handle event and pricing -->
 <script>
-// Get event details from URL parameters
+// Get event details 
 function loadEventDetails() {
     const urlParams = new URLSearchParams(window.location.search);
     const eventName = urlParams.get('event');
     const eventPrice = parseInt(urlParams.get('price'));
 
-    // If event details are present in the URL, display them
+    // display event details
     if (eventName && eventPrice) {
         document.getElementById('eventTitle').textContent = eventName;
         document.getElementById('ticketPrice').textContent = eventPrice;
 
-        // Calculate and display the total price based on the selected number of tickets
+        // Calculating the total price based on the selected number of tickets
         const ticketQuantityInput = document.getElementById('ticketQuantity');
         const totalPriceDisplay = document.getElementById('totalPrice');
 
@@ -104,11 +103,11 @@ function loadEventDetails() {
         }
 
         ticketQuantityInput.addEventListener('input', updateTotalPrice);
-        updateTotalPrice();  // Initialize total price on page load
+        updateTotalPrice();  
     }
 }
 
-// Handle redirection to the payment page
+// redirection to the payment page
 document.getElementById('proceedToPayment').addEventListener('click', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const eventName = urlParams.get('event');
@@ -116,11 +115,11 @@ document.getElementById('proceedToPayment').addEventListener('click', function()
     const quantity = document.getElementById('ticketQuantity').value;
     const totalPrice = document.getElementById('totalPrice').textContent;
 
-    // Redirect to payment page with event and booking details
+    // redirecting to payment page with event and booking details
     window.location.href = `payment.html?event=${encodeURIComponent(eventName)}&quantity=${quantity}&totalPrice=${totalPrice}&price=${ticketPrice}`;
 });
 
-// Load event details when the page loads
+// Load event details 
 window.onload = loadEventDetails;
 </script>
 </body>
