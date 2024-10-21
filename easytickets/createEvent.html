@@ -35,84 +35,61 @@
   <!-- header login sign up buttons end  -->
 
 
-    <div class="box">
-        <div class="header">
-            <h1>Create Event</h1>
-        </div>
-    
-        <form>
-            <div class="row">
-                <div class="col-2">
-                    <label for="firstName">First Name</label>
-                </div>
-                <div class="col-4">
-                    <input type="text" id="firstName" required>
-                    <small>First name</small>
-                </div>
-                <div class="col-4">
-                    <label for="lastName">Last Name</label>
-                    <input type="text" id="lastName" required>
-                    <small>Last name</small>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-2">
-                    <label for="company">Company</label>
-                </div>
-                <div class="col-8">
-                    <input type="text" id="company">
-                </div>
-            </div>
-    
-            <div class="row">
-                <div class="col-2">
-                    <label for="email">Email</label>
-                </div>
-                <div class="col-8">
-                    <input type="email" id="email" required>
-                </div>
-            </div>
-    
-            <div class="row">
-                <div class="col-2">
-                    <label for="areaCode">Phone</label>
-                </div>
-                <div class="col-3">
-                    <input type="tel" id="areaCode" placeholder="Area Code" required>
-                    <small>Area Code</small>
-                </div>
-                <div class="col-5">
-                    <input type="tel" id="phoneNumber" placeholder="Phone Number" required>
-                    <small>Phone Number</small>
-                </div>
-            </div>
-    
-            <div class="row">
-                <div class="col-2">
-                    <label for="subject">Subject</label>
-                </div>
-                <div class="col-8">
-                    <input type="text" id="subject" required>
-                </div>
-            </div>
-    
-            <div class="row">
-                <div class="col-6">
-                    <p>Are You an Existing Customer</p>
-                    <input type="radio" name="customerStatus" value="yes">Yes
-                    <input type="radio" name="customerStatus" value="no">No
-                </div>
-            </div>
-    
-            <div class="row">
-                <div class="col-6">
-                    <button type="submit" class="btn btn-danger">Register</button>
-                </div>
-            </div>
-        </form>
+  <div class="box">
+    <div class="header">
+        <h1>Create Event Ticket</h1>
     </div>
-
+    <form>
+        <div class="row">
+            <div class="col-6">
+                <input type="text" placeholder="Event Name" required>
+            </div>
+            <div class="col-6">
+                <input type="text" placeholder="Event Date" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <input type="text" placeholder="Event Location" required>
+            </div>
+            <div class="col-4">
+                <input type="number" placeholder="Ticket Price" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <input type="email" placeholder="Contact Email" required>
+            </div>
+            <div class="col-6">
+                <input type="tel" placeholder="Contact Phone" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <input type="number" placeholder="Total Tickets" required>
+            </div>
+            <div class="col-8">
+                <small>Enter the maximum number of tickets available</small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <input type="radio" id="public" name="event-type" value="public" checked>
+                <label for="public">Public Event</label>
+            </div>
+            <div class="col-6">
+                <input type="radio" id="private" name="event-type" value="private">
+                <label for="private">Private Event</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <button type="submit">Create Ticket</button>
+            </div>
+        </div>
+    </form>
+</div>
+    
 
 
 </body>

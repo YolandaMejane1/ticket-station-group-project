@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Events Ticket</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/create event.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/styles.css">
+    
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .events-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .event-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 15px;
+            width: 250px;
+        }
+        .event-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .event-info {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .button-container {
+         display: flex;
+        justify-content: center;
+          margin-top: 10px;
+        } 
+        .book-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .book-button:hover {
+            background-color: #0056b3;
+        }
+        .btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+
+ <!-- Header login sign up buttons -->
+ <header class="site-header">
+    <div id="column-container">
+        <div class="column-1">
+            <p class="me-4 mb-0">
+                <strong id="banner-text-1"></strong>
+            </p>
+        </div>
+        <div class="column-2">
+            <p class="me-4 mb-0">
+                <strong>
+                    <a href="signup.html" id="login-link">Login</a> | 
+                    <a href="signup.html" id="register-link">Register</a>
+                </strong>
+            </p>
+        </div>
+    </div>
+</header>
+
+
+ <!-- Header login sign up buttons -->
+
+
+
+<!-- upcoming events -->
+
+    <h1>Upcoming Events</h1>
+    <div class="events-container">
+        <div class="event-card">
+            <div class="event-title">Startup Founder</div>
+            <div class="event-info">Date: October 25, 2024</div>
+            <div class="event-info">Time: 6:00 PM</div>
+            <div class="event-info">Location: Rosebank, The Link</div>
+            <button class="book-button">Book Now</button>
+        </div>
+
+        <div class="event-card">
+            <div class="event-title">Founders Dinner </div>
+            <div class="event-info">Date: October 22, 2024</div>
+            <div class="event-info">Time: 9:00 AM</div>
+            <div class="event-info">Location: Convention Center</div>
+            <button class="book-button">Book Now</button>
+        </div>
+
+        <div class="event-card">
+            <div class="event-title">World Economic Forum</div>
+            <div class="event-info">Date: November  5, 2024</div>
+            <div class="event-info">Time: 11:00 AM</div>
+            <div class="event-info">Location: Cape Town Convention Center</div>
+            <button class="book-button">Book Now</button>
+        </div>
+        <div class="event-card">
+            <div class="event-title">Dubane Summer Break</div>
+            <div class="event-info">Date: November 10, 2024</div>
+            <div class="event-info">Time: 11:00 AM</div>
+            <div class="event-info">Location: Ushaka Marine</div>
+            <button class="book-button">Book Now</button>
+        </div>
+        <div class="event-card">
+            <div class="event-title">Founders Comedy Special</div>
+            <div class="event-info">Date: November 16, 2024</div>
+            <div class="event-info">Time: 11:00 AM</div>
+            <div class="event-info">Location: Blackrock Casino</div>
+            <button class="book-button">Book Now</button>
+        </div>
+        <div class="event-card">
+            <div class="event-title">Crypto MasterClass</div>
+            <div class="event-info">Date: December 1, 2024</div>
+            <div class="event-info">Time: 11:00 AM</div>
+            <div class="event-info">Location: Emperors Palace Convention Center</div>
+            <button class="book-button">Book Now</button>
+        </div>
+    </div>
+    <!-- upcoming events -->
+
+   
+
+</body>
+</html>
