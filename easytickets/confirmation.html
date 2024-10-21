@@ -4,15 +4,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Booking Confirmation</title>
+
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Londrina+Sketch&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div class="container text-center mt-5">
-    <h1 class="display-4">Thank you for your booking!</h1>
-    <p class="lead">Your tickets have been successfully booked.</p>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">EasyTickets</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="About.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="events.html">Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="createEvent.html">Create Event</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="help.html">Help</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contactUs.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Confirmation Message -->
+<div class="container text-center mt-5">
+  <h1 class="display-4">Thank you for your booking!</h1>
+  <p class="lead">Your tickets have been successfully booked.</p>
+  
+  <div class="mt-4">
     <a href="index.html" class="btn btn-primary">Go Back to Events</a>
   </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<script src="script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>
