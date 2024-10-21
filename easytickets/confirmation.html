@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css">
-
+  
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Londrina+Sketch&display=swap" rel="stylesheet">
   
@@ -55,11 +55,53 @@
 <div class="container text-center mt-5">
   <h1 class="display-4">Thank you for your booking!</h1>
   <p class="lead">Your tickets have been successfully booked.</p>
-  
+
+  <!-- Display confirmation details -->
+  <div id="confirmationDetails"></div>
+
   <div class="mt-4">
     <a href="index.html" class="btn btn-primary">Go Back to Events</a>
   </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+  // event details 
+  const urlParams = new URLSearchParams(window.location.search);
+  const eventName = urlParams.get('event');
+  const ticketQuantity = urlParams.get('quantity');
+  const totalPrice = urlParams.get('totalPrice');
+
+  // Generate a unique ticket ID using a combination of date and random number
+  const ticketID = 'TICKET-' + new Date().getTime() + '-' + Math.floor(Math.random() * 10000);
+
+  // Displaying confirmation details in HTML
+  document.getElementById('confirmationDetails').innerHTML = `
+    <h2>Booking Confirmation</h2>
+    <p><strong>Event:</strong> ${eventName}</p>
+    <p><strong>Quantity:</strong> ${ticketQuantity} ticket(s)</p>
+    <p><strong>Total Price:</strong> R${totalPrice}</p>
+    <p><strong>Ticket ID:</strong> ${ticketID}</p>
+    <button class="btn btn-primary mt-3" id="downloadTicket">Download Ticket</button>
+  `;
+
+  // Function to download the ticket as a PDF
+  document.getElementById('downloadTicket').addEventListener('click', function () {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Adding content to the PDF
+    doc.text("Booking Confirmation", 10, 10);
+    doc.text(`Event: ${eventName}`, 10, 20);
+    doc.text(`Quantity: ${ticketQuantity} ticket(s)`, 10, 30);
+    doc.text(`Total Price: R${totalPrice}`, 10, 40);
+    doc.text(`Ticket ID: ${ticketID}`, 10, 50);
+
+    // option to save the PDF
+    doc.save(`Ticket_${ticketID}.pdf`);
+  });
+</script>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
